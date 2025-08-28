@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vignesh Raj V - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">VIGNESH RAJ V</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#internships">Internships</a></li>
+        <li><a href="course-certificates.html">Course Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="marquee">
+    <p>Building Scalable & Creative Digital Experiences | B.Tech in Information Technology - K. Ramakrishnan College of Engineering</p>
+  </div>
+  <section class="hero">
+    <div class="hero-text animate">
+      <h1>Hello, I'm Vignesh Raj V</h1>
+      <h2>Aspiring Full-Stack Developer & Cloud Enthusiast</h2>
+      <a href="#projects" class="btn">Explore My Work</a>
+    </div>
+    <div class="hero-img animate">
+      <img src="profile.jpg" alt="Profile Picture">
+    </div>
+  </section>
+  <section class="stats animate">
+    <div class="stat-card">
+      <h3>2</h3>
+      <p>Internships</p>
+    </div>
+    <div class="stat-card">
+      <h3>15+</h3>
+      <p><a href="course-certificates.html" style="color:black;text-decoration:none;">Course Certifications</a></p>
+    </div>
+  </section>
+<section id="about" class="animate">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <div class="about-text">
+      <p>
+        I am a passionate developer with expertise in web design, full-stack development, and cloud-based application development. 
+        I love solving problems and building applications that are not only functional but also intuitive and user-friendly.  
+        My journey in technology started during my school days and evolved into a career-driven focus during my B.Tech in Information Technology.  
+        I constantly explore new technologies to keep myself updated in this fast-changing digital world.  
+        Beyond coding, I believe in teamwork, innovation, and continuous learning. My goal is to create impactful digital solutions that empower people and businesses.
+      </p>
+    </div>
+  </div>
+</section>
+  <section id="projects" class="animate">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Patient Appointment Scheduling System</h3>
+        <p>Patient Appointment Scheduling System is a web-based platform that enables seamless interaction between patients and doctors. Features include appointment booking, doctor availability management, conflict-free scheduling, and dashboards for patients, doctors, and administrators.</p>
+        <a href="https://github.com/vigneshraj9791/PATIENT-APPOINTMENT-SCHEDULING-SYSTEM">View Project</a>
+      </div>
+      <div class="card">
+        <h3> Parent Teacher Communication Portal</h3>
+        <p>A Parent Teacher Communication Portal that enables seamless interaction between parents and teachers. Features include student progress tracking, announcements, and dashboards for parents, teachers, and administrators.</p>
+        <a href="https://github.com/vigneshraj9791/PARENT-TEACHER-COMMUNICATION-PORTAL-USING-PYTHON">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Text Based Adventure Game</h3>
+        <p>An interactive story-driven game where players explore different paths, make choices, and experience multiple outcomes. Simple CLI-based design with branching narratives for replayability.</p>
+        <a href="https://github.com/vigneshraj9791/JAVA-PROJECT-text-based-adventure-game">View Project</a>
+      </div>
+    </div>
+  </section>
+  <section id="internships" class="animate">
+    <h2>Internships</h2>
+    <div class="internships">
+      <div class="card">
+        <h3>ProFuture Tech Solutions</h3>
+        <p>Hands-on experience in cloud-based application development using AI tools.</p>
+        <a href="profuture.jpg" class="cert-link">View Certificate</a>
+      </div>
+      <div class="card">
+        <h3>Skillcraft Technology</h3>
+        <p>Completed Front-End Web Development Internship, building responsive UIs using HTML, CSS, and JavaScript.</p>
+        <a href="certificates/skillcraft.jpg" class="cert-link">comming soon</a>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="animate">
+    <h2>Contact Me</h2>
+    <p>
+      <i class="fa-solid fa-envelope"></i>
+      <a href="mailto:vigneshraj2005sep@gmail.com" class="contact-link"> vigneshraj2005sep@gmail.com</a>
+    </p>
+    <p>
+      <i class="fa-solid fa-phone"></i>
+      <a href="tel:+919791502223" class="contact-link"> +91-9791502223</a>
+    </p>
+    <p>
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/vigneshraj15/" target="_blank">https://www.linkedin.com/in/vigneshraj15/</a>
+    </p>
+
+    <!-- Contact Form (Formspree Integration) -->
+    <div class="contact-form">
+      <form id="contactForm" action="https://formspree.io/f/movnqzrv" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p id="form-status"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vignesh Raj V | All Rights Reserved</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
