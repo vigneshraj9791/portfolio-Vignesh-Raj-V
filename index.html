@@ -3,36 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vignesh Raj V - Portfolio</title>
+  <title>Vignesh Raj V - Portfolio | Full-Stack & Cloud</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">VIGNESH RAJ V</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#internships">Internships</a></li>
-        <li><a href="course-certificates.html">Course Certificates</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="logo">VIGNESH RAJ V | B.TECH INFORMATION TECHNOLOGY - PRE FINAL YEAR STUDENT</div>
+      <div class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
   </header>
+  
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <span class="close-btn" id="closeSidebar">&times;</span>
+    </div>
+    <ul class="sidebar-links">
+        <li><a href="#about"><i class="fas fa-user-alt"></i> About</a></li>
+        <li><a href="#skills"><i class="fas fa-terminal"></i> Skills</a></li> 
+        <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="#internships"><i class="fas fa-briefcase"></i> Internships</a></li>
+        <li><a href="course-certificates.html"><i class="fas fa-award"></i> Certifications</a></li>
+        <li><a href="#aws"><i class="fab fa-aws"></i> AWS Proof</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/vigneshraj15/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/vigneshraj9791" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+  </aside>
+
   <div class="marquee">
     <p>Building Scalable & Creative Digital Experiences | B.Tech in Information Technology - K. Ramakrishnan College of Engineering</p>
   </div>
+  
   <section class="hero">
     <div class="hero-text animate">
-      <h1>Hello, I'm Vignesh Raj V</h1>
+      <p class="welcome-message" id="welcomeMessage"></p>
+      <h1>I'm Vignesh Raj V</h1>
       <h2>Aspiring Full-Stack Developer & Cloud Enthusiast</h2>
       <a href="#projects" class="btn">Explore My Work</a>
+      <a href="resume.pdf" class="btn secondary-btn" download>Download My Resume <i class="fas fa-download"></i></a>
     </div>
     <div class="hero-img animate">
       <img src="profile.jpg" alt="Profile Picture">
     </div>
   </section>
+  
   <section class="stats animate">
     <div class="stat-card">
       <h3>2</h3>
@@ -40,74 +61,88 @@
     </div>
     <div class="stat-card">
       <h3>15+</h3>
-      <p><a href="course-certificates.html" style="color:black;text-decoration:none;">Course Certifications</a></p>
+      <p><a href="course-certificates.html" style="color:white;text-decoration:none;">Course Certifications</a></p>
     </div>
   </section>
-<section id="about" class="animate">
-  <h2>About Me</h2>
-  <div class="about-container">
-    <div class="about-text">
-      <p>
-        I am a passionate developer with expertise in web design, full-stack development, and cloud-based application development. 
-        I love solving problems and building applications that are not only functional but also intuitive and user-friendly.  
-        My journey in technology started during my school days and evolved into a career-driven focus during my B.Tech in Information Technology.  
-        I constantly explore new technologies to keep myself updated in this fast-changing digital world.  
-        Beyond coding, I believe in teamwork, innovation, and continuous learning. My goal is to create impactful digital solutions that empower people and businesses.
-      </p>
+  
+  <section id="about" class="animate">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="about-text">
+        <p>
+          I am a passionate developer specializing in web design, full-stack, and cloud-based application development.
+          My academic background is in B.Tech (Information Technology), and I focus on building functional, intuitive solutions.
+          I am driven by problem-solving, teamwork, and continuous learning, aiming to create impactful digital solutions.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+  <section id="skills" class="animate">
+    <h2>My Core Skills</h2>
+    <div class="skills-container">
+      <div class="skill-item">C</div>
+      <div class="skill-item">Java</div>
+      <div class="skill-item">Python</div>
+      <div class="skill-item">HTML</div>
+      <div class="skill-item">CSS</div>
+      <div class="skill-item">JS (JavaScript)</div>
+      <div class="skill-item">PHP</div>
+    </div>
+  </section>
   <section id="projects" class="animate">
     <h2>Projects</h2>
     <div class="projects">
       <div class="card">
         <h3>Patient Appointment Scheduling System</h3>
-        <p>Patient Appointment Scheduling System is a web-based platform that enables seamless interaction between patients and doctors. Features include appointment booking, doctor availability management, conflict-free scheduling, and dashboards for patients, doctors, and administrators.</p>
-        <a href="https://github.com/vigneshraj9791/PATIENT-APPOINTMENT-SCHEDULING-SYSTEM">View Project</a>
+        <p>A web-based platform for seamless interaction between patients and doctors. Features include appointment booking, doctor availability management, conflict-free scheduling, and dashboards for various users.</p>
+        <a href="https://github.com/vigneshraj9791/PATIENT-APPOINTMENT-SCHEDULING-SYSTEM" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
       </div>
       <div class="card">
-        <h3> Parent Teacher Communication Portal</h3>
-        <p>A Parent Teacher Communication Portal that enables seamless interaction between parents and teachers. Features include student progress tracking, announcements, and dashboards for parents, teachers, and administrators.</p>
-        <a href="https://github.com/vigneshraj9791/PARENT-TEACHER-COMMUNICATION-PORTAL-USING-PYTHON">View Project</a>
+        <h3>Parent Teacher Communication Portal</h3>
+        <p>A portal developed using Python to enable seamless interaction between parents and teachers, featuring student progress tracking, announcements, and separate dashboards.</p>
+        <a href="https://github.com/vigneshraj9791/PARENT-TEACHER-COMMUNICATION-PORTAL-USING-PYTHON" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
       </div>
       <div class="card">
         <h3>Text Based Adventure Game</h3>
-        <p>An interactive story-driven game where players explore different paths, make choices, and experience multiple outcomes. Simple CLI-based design with branching narratives for replayability.</p>
-        <a href="https://github.com/vigneshraj9791/JAVA-PROJECT-text-based-adventure-game">View Project</a>
+        <p>An interactive story-driven game (JAVA-based CLI) where players explore different paths, make choices, and experience multiple outcomes through branching narratives for high replayability.</p>
+        <a href="https://github.com/vigneshraj9791/JAVA-PROJECT-text-based-adventure-game" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
       </div>
     </div>
   </section>
+  
   <section id="internships" class="animate">
     <h2>Internships</h2>
     <div class="internships">
       <div class="card">
         <h3>ProFuture Tech Solutions</h3>
-        <p>Hands-on experience in cloud-based application development using AI tools.</p>
-        <a href="profuture.jpg" class="cert-link">View Certificate</a>
+        <p>Hands-on experience in **cloud-based application development and utilizing AI tools for enhanced project efficiency.</p>
+        <a href="profuture.jpg" class="cert-link">View Certificate</a> 
       </div>
       <div class="card">
         <h3>Skillcraft Technology</h3>
-        <p>Completed Front-End Web Development Internship, building responsive UIs using HTML, CSS, and JavaScript.</p>
-        <a href="skillcraft.jpg" class="cert-link">View Certificate</a>
+        <p>Completed Front-End Web Development Internship, focusing on building responsive UIs using HTML, CSS, and JavaScript.</p>
+        <a href="skillcraft.jpg" class="cert-link">View Certificate</a> 
       </div>
     </div>
   </section>
-<section id="aws" class="animate">
-  <h2>AWS Hands-on Proof</h2>
-  <div class="aws-proof">
-    <p>
-      I have completed AWS Hands-on tasks and uploaded the proof to GitHub.  
-      You can view them here:
-    </p>
-    <a href="https://github.com/vigneshraj9791/AWS-Hands-on-Proof" 
-       class="btn" target="_blank">
-       🔗 View on GitHub
-    </a>
-  </div>
-</section>
-
+  
+  <section id="aws" class="animate">
+    <h2>AWS Hands-on Proof</h2>
+    <div class="aws-proof">
+      <p>
+        I have completed various **AWS Hands-on tasks** to demonstrate my cloud proficiency.  
+        The proof and related documentation are uploaded to my GitHub repository:
+      </p>
+      <a href="https://github.com/vigneshraj9791/AWS-Hands-on-Proof" 
+        class="btn" target="_blank">
+        🔗 View AWS Proof on GitHub
+      </a>
+    </div>
+  </section>
+  
   <section id="contact" class="animate">
-    <h2>Contact Me</h2>
+    <h2>Connect With Me</h2>
     <p>
       <i class="fa-solid fa-envelope"></i>
       <a href="mailto:vigneshraj2005sep@gmail.com" class="contact-link"> vigneshraj2005sep@gmail.com</a>
@@ -118,10 +153,13 @@
     </p>
     <p>
       <i class="fa-brands fa-linkedin"></i>
-      <a href="https://www.linkedin.com/in/vigneshraj15/" target="_blank">https://www.linkedin.com/in/vigneshraj15/</a>
+      <a href="https://www.linkedin.com/in/vigneshraj15/" target="_blank">linkedin.com/in/vigneshraj15/</a>
+    </p>
+    <p>
+      <i class="fa-brands fa-github"></i>
+      <a href="https://github.com/vigneshraj9791" target="_blank">github.com/vigneshraj9791</a>
     </p>
 
-    <!-- Contact Form (Formspree Integration) -->
     <div class="contact-form">
       <form id="contactForm" action="https://formspree.io/f/movnqzrv" method="POST">
         <div class="form-group">
@@ -139,7 +177,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 Vignesh Raj V | All Rights Reserved</p>
   </footer>
