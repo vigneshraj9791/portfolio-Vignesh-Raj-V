@@ -3,30 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Course Certificates</title>
+  <title>Course Certificates - Vignesh Raj V</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <header>
     <nav class="navbar">
       <div class="logo">VIGNESH RAJ V</div>
-      <ul class="nav-links">
-        <li><a href="index.html">About</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#internships">Internships</a></li>
-        <li><a href="course-certificates.html">Course Certificates</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
+      <div class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
   </header>
 
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <span class="close-btn" id="closeSidebar">&times;</span>
+    </div>
+    <ul class="sidebar-links">
+        <li><a href="index.html#about"><i class="fas fa-user-alt"></i> About</a></li>
+        <li><a href="index.html#skills"><i class="fas fa-terminal"></i> Skills</a></li> 
+        <li><a href="index.html#projects"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="index.html#internships"><i class="fas fa-briefcase"></i> Internships</a></li>
+        <li><a href="course-certificates.html"><i class="fas fa-award"></i> Certifications</a></li>
+        <li><a href="index.html#aws"><i class="fab fa-aws"></i> AWS Proof</a></li>
+        <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/vigneshraj15/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/vigneshraj9791" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+  </aside>
+
   <main>
-    <!-- Certificates Section -->
     <section class="certificates-section">
       <h2>Course Certifications</h2>
       <div class="certificates">
-                <div class="cert-item">
+        
+        <div class="cert-item">
+          <a href="aws.jpg" target="_blank">
+            <img src="aws.jpg" alt="AWS Certified Cloud Practitioner">
+          </a>
+          <p>AWS Certified Cloud Practitioner</p>
+        </div>
+        
+        <div class="cert-item">
           <a href="info.jpeg.jpeg" target="_blank">
             <img src="info.jpeg.jpeg" alt="Infosys Angular Full Stack">
           </a>
@@ -58,14 +82,15 @@
             <img src="php_page-0001.jpg" alt="PHP with MySQL:Build Complete Tours And Travel Website">
           </a>
           <p>PHP with MySQL:Build Complete Tours And Travel Website</p>
-
+        </div>
       </div>
     </section>
+    
   </main>
 
   <footer>
     <p>© 2025 VIGNESH RAJ V | Portfolio</p>
   </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
