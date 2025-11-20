@@ -14,7 +14,7 @@ function showOnScroll() {
 window.addEventListener('scroll', showOnScroll);
 window.addEventListener('load', showOnScroll);
 
-// ===== Dynamic Typing Effect =====
+// ===== Dynamic Typing Effect (H2 - Role Description) =====
 const typingText = document.querySelector('.hero-text h2');
 if (typingText) {
   const messages = [
@@ -49,6 +49,27 @@ if (typingText) {
   }
 
   typeEffect();
+}
+
+// ===== Welcome Message Typing Effect (New) =====
+const welcomeElement = document.getElementById('welcomeMessage');
+if (welcomeElement) {
+    const welcomeMessage = "Welcome to My Portfolio 👋";
+    let wCharIndex = 0;
+
+    function typeWelcome() {
+        if (wCharIndex < welcomeMessage.length) {
+            welcomeElement.textContent += welcomeMessage.charAt(wCharIndex);
+            wCharIndex++;
+            setTimeout(typeWelcome, 70); // Fast typing speed
+        }
+    }
+
+    // Start the welcome message typing effect immediately on load
+    window.addEventListener('load', () => {
+        // Delay slightly so it appears after initial screen paint
+        setTimeout(typeWelcome, 500); 
+    });
 }
 
 // ===== Dynamic Footer Year =====
@@ -109,5 +130,31 @@ if (form) {
     } catch (error) {
       formStatus.textContent = "⚠️ Network error. Please try again.";
     }
+  });
+}
+
+// ===== Sidebar Toggle Logic =====
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
+const closeSidebar = document.getElementById('closeSidebar');
+const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+
+if (sidebar && sidebarToggle && closeSidebar) {
+  sidebarToggle.addEventListener('click', () => {
+    sidebar.style.width = '300px'; 
+  });
+
+  closeSidebar.addEventListener('click', () => {
+    sidebar.style.width = '0'; 
+  });
+
+  // Close sidebar when a link is clicked
+  sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          // Add a small delay for smoother transition before closing
+          setTimeout(() => {
+             sidebar.style.width = '0';
+          }, 300);
+      });
   });
 }
