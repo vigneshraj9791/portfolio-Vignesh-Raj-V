@@ -1,22 +1,47 @@
+/* Color Palette: 
+   Primary: #00FFFF (Cyan) / #00BCD4 
+   Background: #000 (Black) / #111 (Deep Gray)
+   Text: #f5f5f5 (Off-White)
+*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Changed Font Style to Poppins */
 }
 
 body {
   background: #000;
   color: #f5f5f5;
   transition: background 0.3s, color 0.3s;
+  font-size: 18px; /* Increased Base Font Size */
+  /* Background lightning effect */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4) inset; /* Initial subtle inner glow */
+  animation: lightning-pulse 8s infinite alternate; /* Apply the pulse animation */
 }
+
+/* Animation Definition for the Background Glow */
+@keyframes lightning-pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.4) inset;
+    }
+    50% {
+        /* Brighter glow at mid-point */
+        box-shadow: 0 0 80px #00FFFF inset, 0 0 100px #00FFFF inset;
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.4) inset;
+    }
+}
+
 
 /* Navbar */
 header {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  background: rgba(255, 221, 87, 0.9);
+  background: rgba(0, 188, 212, 0.9); /* New primary color for navbar */
   z-index: 1000;
 }
 
@@ -33,44 +58,115 @@ header {
   color: black;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.nav-links li {
-  margin-left: 20px;
-}
-
-.nav-links a {
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  font-size: 1.5rem;
   color: black;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+  cursor: pointer;
 }
 
-.nav-links a:hover {
-  color: white;
+/* --- SIDEBAR STYLES --- */
+.sidebar {
+  height: 100%; 
+  width: 0; 
+  position: fixed; 
+  z-index: 2000; 
+  top: 0; 
+  right: 0;
+  background-color: #1a1a1a; 
+  overflow-x: hidden; 
+  transition: 0.5s; 
+  padding-top: 60px; 
+  box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
+.sidebar-header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn {
+  font-size: 2.5rem;
+  color: #00FFFF; /* New primary color */
+  cursor: pointer;
+  line-height: 1;
+}
+
+.sidebar-links {
+  list-style-type: none;
+  width: 100%;
+  padding: 20px;
+}
+
+.sidebar-links li a {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #f5f5f5;
+  display: block;
+  transition: 0.3s;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-links li a i {
+    margin-right: 10px;
+    color: #00BCD4; /* New accent color */
+}
+
+.sidebar-links li a:hover {
+  color: #00FFFF; /* New primary color */
+  background-color: #333;
+  border-left: 3px solid #00FFFF;
+}
+
+.social-links {
+    margin-top: auto; 
+    padding: 20px;
+    width: 100%;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.social-links a {
+    color: #00BCD4; /* New accent color */
+    font-size: 1.8rem;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #00FFFF; /* New primary color */
+}
+/* --- END SIDEBAR STYLES --- */
+
 
 /* Marquee */
 .marquee {
-  background: #ffdd57;
-  color: black;
+  background: #111; /* Darker background for marquee */
+  color: #00BCD4; /* New accent color */
   font-weight: bold;
   padding: 8px 0;
   white-space: nowrap;
   overflow: hidden;
   margin-top: 60px;
+  border-top: 1px solid #00BCD4;
 }
 
 .marquee p {
   display: inline-block;
   padding-left: 100%;
-  animation: marquee 15s linear infinite;
+  animation: marquee-alt 20s linear infinite alternate; /* UPDATED: Added alternate */
 }
 
-@keyframes marquee {
+@keyframes marquee-alt { /* UPDATED KEYFRAME NAME */
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
@@ -85,18 +181,24 @@ header {
   background: linear-gradient(145deg, #000 70%, #111);
 }
 
-.hero-text {
-  flex: 1;
+/* New Welcome Message Style */
+.welcome-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00BCD4; /* New accent color */
+    margin-bottom: 20px;
+    display: block;
+    min-height: 25px; /* Prevent layout shift */
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 3.2rem; /* Slightly larger H1 */
   margin-bottom: 10px;
-  color: #ffdd57;
+  color: #00FFFF; /* New primary color */
 }
 
 .hero-text h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem; /* Slightly larger H2 */
   margin-bottom: 15px;
   font-weight: 400;
   color: white;
@@ -106,16 +208,28 @@ header {
   display: inline-block;
   padding: 10px 20px;
   margin-top: 20px;
-  background: #ffdd57;
+  background: #00BCD4; /* New accent color */
   color: black;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
+  margin-right: 15px;
 }
 
 .btn:hover {
-  background: #ffc107;
+  background: #00FFFF; /* New primary color */
+}
+
+.secondary-btn {
+    background: #111;
+    color: #00BCD4;
+    border: 2px solid #00BCD4;
+}
+
+.secondary-btn:hover {
+    background: #00BCD4;
+    color: black;
 }
 
 .hero-img {
@@ -126,8 +240,8 @@ header {
 .hero-img img {
   max-width: 300px;
   border-radius: 50%;
-  border: 4px solid #ffdd57;
-  box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+  border: 4px solid #00BCD4; /* New accent color */
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
 }
 
 /* Stats Section */
@@ -141,7 +255,7 @@ header {
 }
 
 .stat-card {
-  background: #ffdd57;
+  background: #00BCD4; /* New accent color */
   color: black;
   padding: 20px 40px;
   border-radius: 12px;
@@ -158,66 +272,118 @@ header {
   font-size: 1.2rem;
   font-weight: bold;
 }
+.stat-card p a { /* Ensures link color is white for readability */
+    color: white !important;
+}
 
 .stat-card:hover {
   transform: translateY(-5px);
+  background: #00FFFF; /* Hover color */
 }
 
 /* About Section */
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.about-text {
-  flex: 1;
-  text-align: justify;
-  font-size: 1.2rem;
+#about p {
+  font-size: 1.15rem; /* Increased text size for About Me section */
   line-height: 1.8;
-  max-width: 700px;
+  text-align: justify; /* NEW: Justify text */
 }
 
-.about-img {
-  flex: 1;
-  text-align: right;
+/* --- SKILLS SECTION STYLES --- */
+#skills {
+  padding: 100px 60px;
+  background: #000;
+  text-align: center;
 }
+
+#skills h2 {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  /* Lightning Background Effect (Subtle Glow Animation) */
+  animation: skillGlow 5s infinite alternate;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+@keyframes skillGlow {
+    0% {
+        /* Subtle cyan glow */
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    100% {
+        /* Brighter cyan glow */
+        box-shadow: 0 0 15px #00FFFF, 0 0 30px #00FFFF, 0 0 45px rgba(0, 255, 255, 0.1);
+    }
+}
+
+.skill-item {
+  background: #1a1a1a;
+  color: #00FFFF; /* Text Color for Skill */
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  /* Text Effect (Neon Glow/Lightning Text) */
+  text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
+  border: 1px solid #00BCD4;
+}
+
+.skill-item:hover {
+  background: #00BCD4;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00FFFF; /* Individual skill glow on hover */
+  text-shadow: none; /* Remove glow when background is bright */
+}
+/* --- END SKILLS SECTION STYLES --- */
+
 
 /* Projects, Internships */
 .projects, .internships {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 15px; /* DECREASED GAP between projects/internships */
 }
 
 .card {
-  background: #ffdd57;
-  color: #000;
+  background: #1a1a1a; /* Darker card background */
+  color: #f5f5f5;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s, border 0.3s;
   font-weight: 500;
+  border-bottom: 3px solid #00BCD4; /* Subtle accent border */
 }
 
 .card h3 {
   margin-bottom: 10px;
-  color: #111;
+  color: #00FFFF; /* New primary color */
+}
+
+.card p {
+  font-size: 1.05rem; /* Slightly larger text for project/internship descriptions */
 }
 
 .card a {
   display: inline-block;
   margin-top: 10px;
-  color: #111;
+  color: #00BCD4; /* New accent color */
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  background: #ffc107;
+  background: #222;
+  border-bottom: 3px solid #00FFFF;
 }
 
 /* ===================== */
@@ -226,7 +392,8 @@ header {
 #about,
 #projects,
 #internships,
-#contact {
+#contact,
+#aws { 
   padding: 100px 60px;
 }
 
@@ -234,19 +401,25 @@ header {
 #about h2,
 #projects h2,
 #internships h2,
-#contact h2 {
-  margin-bottom: 50px; /* bigger gap below headings */
+#contact h2,
+#aws h2 { 
+  margin-bottom: 50px; 
   text-align: left;
 }
+/* Re-center the skills heading */
+#skills h2 {
+    text-align: center; 
+}
+
 
 h2 {
   font-size: 2.5rem;
-  color: #ffdd57;
+  color: #00FFFF; /* New primary color */
 }
 
 /* Certificates Section */
 .certificates-section {
-  padding: 100px 50px 80px; /* separate spacing */
+  padding: 100px 50px 80px;
 }
 
 .certificates {
@@ -262,12 +435,12 @@ h2 {
 
 .certificates .cert-item img {
   width: 100%;
-  max-width: 300px;   /* same maximum width */
-  height: 200px;      /* fixed height */
-  object-fit: cover;  /* crops nicely without distortion */
-  border: 2px solid #ffdd57;
+  max-width: 300px;   
+  height: 200px;      
+  object-fit: cover;  
+  border: 2px solid #00BCD4; /* New accent color */
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
   transition: transform 0.3s;
   cursor: pointer;
 }
@@ -275,24 +448,25 @@ h2 {
 
 .certificates .cert-item img:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 188, 212, 0.5);
 }
 
 .certificates .cert-item p {
   margin-top: 10px;
   font-size: 1rem;
   font-weight: bold;
-  color: #ffdd57;
+  color: #00FFFF; /* New primary color */
 }
 
 /* Contact Section */
 #contact p {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 1.1rem;
 }
 
 #contact i {
   margin-right: 8px;
-  color: #ffdd57;
+  color: #00BCD4; /* New accent color */
 }
 
 #contact a, 
@@ -305,7 +479,7 @@ h2 {
 
 #contact a:hover,
 #contact .contact-link:hover {
-  color: #ffdd57;
+  color: #00FFFF; /* New primary color */
 }
 
 /* Contact Form */
@@ -318,15 +492,11 @@ h2 {
   max-width: 500px;
 }
 
-.contact-form .form-group {
-  margin-bottom: 15px;
-}
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 10px;
-  border: 2px solid #ffdd57;
+  border: 2px solid #00BCD4; /* New accent color */
   border-radius: 8px;
   font-size: 1rem;
   background: #000;
@@ -336,12 +506,12 @@ h2 {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #ffc107;
+  border-color: #00FFFF;
 }
 
 .contact-form button {
   width: 100%;
-  background: #ffdd57;
+  background: #00BCD4; /* New accent color */
   color: black;
   border: none;
   padding: 12px;
@@ -353,20 +523,20 @@ h2 {
 }
 
 .contact-form button:hover {
-  background: #ffc107;
+  background: #00FFFF;
 }
 
 #form-status {
   margin-top: 10px;
   font-size: 0.9rem;
   font-weight: bold;
-  color: #ffdd57;
+  color: #00FFFF; /* New primary color */
 }
 
 /* Footer */
 footer {
   background: #111;
-  color: #ffdd57;
+  color: #00BCD4; /* New accent color */
   text-align: center;
   padding: 20px;
 }
@@ -407,7 +577,7 @@ footer {
 .modal-content img {
   max-width: 85%;
   max-height: 85vh;
-  border: 4px solid #ffdd57;
+  border: 4px solid #00BCD4; /* New accent color */
   border-radius: 12px;
 }
 
@@ -415,22 +585,24 @@ footer {
   position: absolute;
   top: 10px; right: 15px;
   font-size: 2rem;
-  color: #ffdd57;
+  color: #00FFFF; /* New primary color */
   cursor: pointer;
 }
 .certificates-section h2 {
-  margin-bottom: 50px; /* adds space between heading and certificate grid */
-  text-align: center;  /* keep it centered */
+  margin-bottom: 50px; 
+  text-align: center;
 }
+
+/* AWS Hands-on Proof Section */
 #aws {
-  padding: 100px 60px;
-  background: #111; /* dark background to separate */
+  background: #111;
   text-align: center;
 }
 
 #aws h2 {
-  color: #ffdd57;
+  color: #00FFFF; /* New primary color */
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .aws-proof p {
@@ -440,18 +612,50 @@ footer {
 }
 
 .aws-proof .btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #ffdd57;
-  color: black;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
+  background: #00BCD4; 
 }
 
 .aws-proof .btn:hover {
-  background: #ffc107;
+  background: #00FFFF;
 }
 
 
+/* Media Query for Sidebar on smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+    }
+    .hero {
+        flex-direction: column;
+        padding-top: 100px;
+        text-align: center;
+    }
+    .hero-img {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .hero-img img {
+        max-width: 250px;
+    }
+    #about, #skills, #projects, #internships, #contact, #aws, .certificates-section {
+        padding: 80px 20px;
+    }
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .stat-card {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .projects, .internships {
+        grid-template-columns: 1fr;
+    }
+    
+    #about h2, #skills h2, #projects h2, #internships h2, #contact h2, #aws h2 {
+        text-align: center;
+    }
+    .about-text {
+        text-align: left;
+    }
+}
